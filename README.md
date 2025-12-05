@@ -1,5 +1,15 @@
 # TypeScript Error Reproduction: Better Auth Plugin Inference
 
+> [!NOTE]
+> ## ARCHIVED
+> This issue has been **fixed** in `better-auth` version **1.4.6-beta.3**.
+> 
+> See the fix: [PR #6490 - fix: export organization plugin types](https://github.com/better-auth/better-auth/pull/6490)
+>
+> This repository is kept for historical reference only.
+
+---
+
 This is a minimal reproduction repository demonstrating a TypeScript error when using `better-auth` with multiple plugins and type inference.
 
 ## The Error
@@ -87,9 +97,22 @@ TypeScript fails to infer the type, requiring explicit type annotations which de
 ## Related Issues
 
 - https://github.com/better-auth/better-auth/issues/4250#issuecomment-3530435793
-  
-  
-## Workarounds
 
-Potential workarounds (not implemented in this repo):
+## Resolution
+
+**Fixed in `better-auth@1.4.6-beta.3`**
+
+The issue was caused by missing type exports for the organization plugin's Zod inferred types. The fix was to re-export these types, making them available to TypeScript in consumer applications.
+
+- **Fix PR**: [#6490 - fix: export organization plugin types](https://github.com/better-auth/better-auth/pull/6490)
+
+To resolve this issue, update to `better-auth@1.4.6-beta.3` or later:
+
+```bash
+bun add better-auth@1.4.6-beta.3
+```
+  
+## Workarounds (Historical)
+
+These workarounds are no longer needed after updating to v1.4.6-beta.3:
 - Don't emit declaration files

@@ -9,7 +9,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "better-auth": "1.4.2-beta.1"
+    "better-auth": "1.4.6-beta.3"
   },
   "devDependencies": {
     "@types/bun": "latest",
